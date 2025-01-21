@@ -82,6 +82,8 @@ class Program
                         {  
                         Console.WriteLine($"DateTime: {entry._date}");
                         Console.WriteLine($"{entry._promptText}");
+
+                        // I added a String "Answer" as my exceeding requirement
                         Console.WriteLine($"Answer: {entry._EntryText}");
                         Console.WriteLine("");
                         }
@@ -115,7 +117,8 @@ class Program
                         string Option2 = Console.ReadLine();
                         int OptionNumber2 = int.Parse(Option);
                         Console.WriteLine("");
-                        
+
+                        // I added this if-statement as my exceeding requirement
                         if (OptionNumber2 == 0)
                         {
                                 Console.WriteLine("");
