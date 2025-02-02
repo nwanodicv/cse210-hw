@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace OnlineOrdering
 {
@@ -36,16 +37,87 @@ namespace OnlineOrdering
             return total;
         }
 
+        public decimal GetShippingPrice()
+        {
+            decimal CostOfShipping = 5;
+            if (CostOfShipping == 5)
+            {
+                
+            }
+            return CostOfShipping;
+        }
+
         public void PrintOrder()
         {
             Console.WriteLine($"Order for {_customerName}");
             Console.WriteLine($"Shipping to: {_address}");
+            Console.WriteLine($"Cost of shipping: {GetShippingPrice():C}");
             Console.WriteLine("Items:");
             foreach (var item in _items)
             {
                 Console.WriteLine($"{item.Name} - {item.Quantity} x {item.Price:C}");
             }
-            Console.WriteLine($"Total: {GetTotalPrice():C}");
+            Console.WriteLine($"Total Cost of Products: {GetTotalPrice():C}");
+            Console.WriteLine("");
+            Console.WriteLine("Total cost of product + Cost of shipping");
+            Console.WriteLine($"Grand Total: {GetTotalPrice() + GetShippingPrice()}");
+        }
+    }
+
+    public class Order2
+    {
+        private List<OrderItem> _items2;
+        private string _customerName2;
+        private string _address2;
+
+        public Order2(string customerName2, string address2)
+        {
+            _customerName2 = customerName2;
+            _address2 = address2;
+            _items2 = new List<OrderItem>();
+        }
+
+        public void AddItem(OrderItem item2)
+        {
+            _items2.Add(item2);
+        }
+
+        public void RemoveItem(OrderItem item2)
+        {
+            _items2.Remove(item2);
+        }
+
+        public decimal GetTotalPrice()
+        {
+            decimal total = 0;
+            foreach (var item in _items2)
+            {
+                total += item.Price * item.Quantity;
+            }
+            return total;
+        }
+
+        public decimal GetShippingPrice2()
+        {
+            decimal CostOfShipping2 = 35;
+
+            return CostOfShipping2;
+        }
+
+        public void PrintOrder2()
+        {
+            Console.WriteLine($"Order for {_customerName2}");
+            Console.WriteLine($"Shipping to: {_address2}");
+            Console.WriteLine($"Cost of shipping: {GetShippingPrice2():C}");
+            Console.WriteLine("Items:");
+            foreach (var item2 in _items2)
+            {
+                Console.WriteLine($"{item2.Name} - {item2.Quantity} x {item2.Price:C}");
+            }
+            Console.WriteLine($"Total Cost of Products: {GetTotalPrice():C}");
+            Console.WriteLine("");
+            Console.WriteLine("Total cost of product + Cost of shipping");
+            Console.WriteLine($"Grand Total: {GetTotalPrice() + GetShippingPrice2()}");
         }
     }
 

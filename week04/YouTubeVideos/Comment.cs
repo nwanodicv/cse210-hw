@@ -29,10 +29,5 @@ namespace YouTubeVideos
             return ToString();
 
         }
-
-        public string SetGetNumberOfComment()
-        {
-            return "";
-        }
     }
 }
