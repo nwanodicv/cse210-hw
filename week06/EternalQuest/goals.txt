@@ -1,0 +1,3 @@
+1000
+SimpleGoal,Marathon,1000,True
+SimpleGoal,Marathon,1000,False
